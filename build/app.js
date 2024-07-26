@@ -1483,12 +1483,6 @@ class GameCoordinator {
      */
     createElements(sources, type, totalSources, gameCoord) {
         const loadingContainer = document.getElementById('loading-container');
-        if (loadingContainer) {
-    // Codice che utilizza loadingContainer
-    console.log(loadingContainer.scrollWidth); // Esempio di utilizzo
-} else {
-    console.error('Element loadingContainer not found');
-}
         const preloadDiv = document.getElementById('preload-div');
         const loadingPacman = document.getElementById('loading-pacman');
         const containerWidth = loadingContainer.scrollWidth -
@@ -1496,6 +1490,13 @@ class GameCoordinator {
         const loadingDotMask = document.getElementById('loading-dot-mask');
 
         const gameCoordRef = gameCoord;
+
+                if (loadingContainer) {
+    // Codice che utilizza loadingContainer
+    console.log(loadingContainer.scrollWidth); // Esempio di utilizzo
+} else {
+    console.error('Element loadingContainer not found');
+}
 
         return new Promise((resolve, reject) => {
             let loadedSources = 0;
