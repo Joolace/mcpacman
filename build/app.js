@@ -1441,8 +1441,15 @@ class GameCoordinator {
             const totalSources = imgSources.length + audioSources.length;
             this.remainingSources = totalSources;
 
-            loadingPacman.style.left = '0';
-            loadingDotMask.style.width = '0';
+            const loadingPacman = document.getElementById('loading-pacman');
+const loadingDotMask = document.getElementById('loading-dot-mask');
+
+if (loadingPacman && loadingDotMask) {
+    loadingPacman.style.left = '0';
+    loadingDotMask.style.width = '0';
+} else {
+    console.error('Element loadingPacman or loadingDotMask not found');
+}
 
             Promise.all([
                 this.createElements(
