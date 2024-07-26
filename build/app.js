@@ -1441,17 +1441,8 @@ class GameCoordinator {
             const totalSources = imgSources.length + audioSources.length;
             this.remainingSources = totalSources;
 
-            window.onload = () => {
-            const loadingPacman = document.getElementById('loading-pacman');
-            const loadingDotMask = document.getElementById('loading-dot-mask');
-
-    if (loadingPacman && loadingDotMask) {
-        loadingPacman.style.left = '0';
-        loadingDotMask.style.width = '0';
-    } else {
-        console.error('Element loadingPacman or loadingDotMask not found');
-    }
-};
+            loadingPacman.style.left = '0';
+            loadingDotMask.style.width = '0';
 
             Promise.all([
                 this.createElements(
@@ -1490,13 +1481,6 @@ class GameCoordinator {
         const loadingDotMask = document.getElementById('loading-dot-mask');
 
         const gameCoordRef = gameCoord;
-
-                if (loadingContainer) {
-    // Codice che utilizza loadingContainer
-    console.log(loadingContainer.scrollWidth); // Esempio di utilizzo
-} else {
-    console.error('Element loadingContainer not found');
-}
 
         return new Promise((resolve, reject) => {
             let loadedSources = 0;
